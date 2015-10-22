@@ -1,0 +1,23 @@
+{
+  "name": "insphire",
+  "version": "1.0.0",
+  "description": "Connecting students and employers",
+  "main": "base.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmartines/insphire.git"
+  },
+  "keywords": [
+    "student",
+    "debt"
+  ],
+  "author": "Dan Martines",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmartines/insphire/issues"
+  },
+  "homepage": "https://github.com/dmartines/insphire#readme"
+}
