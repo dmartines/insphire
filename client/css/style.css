@@ -203,9 +203,8 @@ body {
 }
 
 .signup-button {
-	background-color: #2B53B2;
-	color: #fff;
-    border: 1px solid #2B53B2;
+  width: 225px;
+  cursor: pointer;
 }
 
 .whitepanel {
