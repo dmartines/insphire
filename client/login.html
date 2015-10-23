@@ -1,7 +1,8 @@
 <template name="login">
     {{#if currentUser}}
-        <p>Welcome back {{currentUser.profile.name}}</p>
-        <button id="logout">Logout</button>
+        <!--<a href="/profile">{{currentUser.profile.name}}</a>-->
+        <a href="/profile" style="padding: 10px;"><div id="userpicture"></div></a>
+        <!--<button id="logout">Logout</button>-->
     {{else}}
         <!--<button id="facebook-login" class="btn btn-default"> Login with Facebook</button>-->
         <img id="facebook-login" src="img/sign-in-facebook.png" class="signup-button">

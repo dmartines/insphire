@@ -32,7 +32,7 @@ body {
   height: 100%;
 }
 
-.first-page1 { 
+.first-page { 
   background: url(../img/background.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -56,8 +56,6 @@ body {
   width: 100%;
   height: 100%; /* For at least Firefox */
   min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
 
 .site-wrapper {
@@ -203,8 +201,9 @@ body {
 }
 
 .signup-button {
-  width: 225px;
+  width: 150px;
   cursor: pointer;
+  margin: 10px 0px 5px 10px;
 }
 
 .whitepanel {
@@ -217,4 +216,9 @@ body {
 
 .bluepanel {
 	background-color: #2B53B2;
+}
+
+.fbpicture {
+  border-radius: 50%;
+  width: 30px;
 }
