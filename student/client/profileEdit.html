@@ -1,0 +1,39 @@
+<template name="profileEdit">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Edit your profile</h1>
+				<img src="{{ myUser.profile.picture }}">
+
+				{{#autoForm id="studentEdit" doc=studentProfile schema="StudentProfile" type="normal" }}
+					<fieldset>
+						<input type="hidden" id="studentId" value="{{myUser._id}}">
+						<div class="form-group">
+							<label for="firstName" class="control-group">First name</label>
+							<input id="firstName" class="form-control" value="{{ myUser.profile.first_name }}">
+							<div id="first_nameRequiredError" class="panel-body has-error" style="display:none; ">
+						    	<span class="help-block">First name is required</span>
+						    </div>
+						</div>
+						<div class="form-group">
+							<label for="lastName" class="control-group">Second</label>
+							<input id="lastName" class="form-control" value="{{ myUser.profile.last_name }}">
+							<div id="last_nameRequiredError" class="panel-body has-error" style="display:none; ">
+						    	<span class="help-block">Last name is required</span>
+						    </div>
+						</div>
+						{{> afQuickField name='dream' }}
+						{{> afQuickField name='youtubeEmbed' }}
+					</fieldset>
+					<button type="submit" id="submitStudentEdit" class="btn btn-primary">Save</button>
+					<button type="cancel" id="cancelStudentEdit" class="btn btn-default cancel">Cancel</button>
+				{{/autoForm}}
+			</div>
+
+			<!--{{> quickForm id="studentEdit1" schema="StudentProfile" type="normal" template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9"}}-->
+		</div>
+	</div>
+
+
+</template>

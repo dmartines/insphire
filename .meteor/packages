@@ -23,3 +23,7 @@ ejson
 spacebars
 check
 iron:router
+aldeed:autoform
+aldeed:collection2
+easy:search
+useraccounts:iron-routing

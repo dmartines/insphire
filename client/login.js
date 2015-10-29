@@ -1,7 +1,5 @@
 Template.login.onRendered(function() {
 
-    console.log("Current user");
-
     window.fbAsyncInit = function() {
 
         FB.init({
@@ -31,6 +29,7 @@ Template.login.events({
     'click #facebook-login': function(event) {
         Meteor.loginWithFacebook({}, function(err){
             if (err) {
+                console.log(err);
                 throw new Meteor.Error("Facebook login failed");
             }
         });
@@ -52,13 +51,11 @@ function statusChangeCallback(response) {
         getUserDetails();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
+      console.log('Not authorized');
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
+      console.log('Not authorized and not logged in');
     }
 }
 
@@ -70,8 +67,17 @@ function getUserDetails() {
                 var html = '<img src="' + userprofile.picture.data.url + '" class="fbpicture">';
                 var user = Meteor.user();
                 $('#userpicture').html(html);
-                if (Meteor.user().profile.first_name) {
-                    Meteor.call("updateUserPicture", userprofile.picture.data.url );
+                if (Meteor.user()) {
+                    if (Meteor.user().profile.first_name) {
+                        Meteor.call("updateUserPicture", userprofile.picture.data.url );
+                    } else {
+                        Meteor.call("updateUser", {
+                            "first_name" : userprofile.first_name,
+                            "last_name" : userprofile.last_name,
+                            "picture" : userprofile.picture.data.url,
+                            "name" : userprofile.name
+                        });
+                    }
                 } else {
                     Meteor.call("updateUser", {
                         "first_name" : userprofile.first_name,
